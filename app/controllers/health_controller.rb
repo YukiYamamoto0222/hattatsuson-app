@@ -1,4 +1,6 @@
 class HealthController < ApplicationController
+  protect_from_forgery :except => [:data_create]
+
   def index
 
   end
