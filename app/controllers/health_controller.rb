@@ -37,7 +37,7 @@ class HealthController < ApplicationController
   end
 
   def data_create
-    @health = Health.find_by(user_id: params[:user_id], date: Date.today)
+    @health = Health.last
     @health.rain_pct = params[:rain_pct]
     @health.w_temp = params[:w_temp]
     @health.y_steps = params[:y_steps]
