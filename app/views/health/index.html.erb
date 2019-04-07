@@ -1,3 +1,8 @@
 <h1>ホーム画面</h1>
 
 <h5>今日のResult</h5>
+
+<%= link_to "ログイン", new_user_session_path %>
+<%= link_to "新規登録", cancel_user_registration_path %>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<%= link_to "アカウント削除", cancel_user_registration_path %>
