@@ -1,7 +1,7 @@
 require 'csv'
 
 CSV.generate do |csv|
-  column_names = %w(user_id pref_code year month day rain_pct w_temp w_shitsu w_press y_steps self_exp result)
+  column_names = %w(user_id pref_code year month day rain_pct w_temp y_steps self_exp result)
   csv << column_names
   @health_data.each do |data|
     column_values = [
