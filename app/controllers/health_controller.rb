@@ -37,8 +37,9 @@ class HealthController < ApplicationController
   end
 
   def data_create
-    @health = Health.new
+    # 要短縮
     @health.date = Date.today
+    @health.user_id = params[:user_id]
     @health.rain_pct = params[:rain_pct]
     @health.w_temp = params[:w_temp]
     @health.y_steps = 0
