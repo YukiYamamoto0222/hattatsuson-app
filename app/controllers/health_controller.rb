@@ -9,7 +9,7 @@ class HealthController < ApplicationController
   end
 
   def morning_create
-    @health = Health.find_by(user_id: current_user.id, date: Date.today)
+    @health = Health.last
     @health.self_exp = params[:self_exp]
     if @health.save
       redirect_to "/health/morning_response"
@@ -22,7 +22,7 @@ class HealthController < ApplicationController
   end
 
   def night_create
-    @health = Health.find_by(user_id: current_user.id, date: Date.today)
+    @health = Health.last
     @health.result = params[:result]
     if @health.save
       redirect_to "/health/night_response"
