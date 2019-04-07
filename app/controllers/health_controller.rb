@@ -41,8 +41,8 @@ class HealthController < ApplicationController
     @health.date = Date.today
     @health.rain_pct = params[:rain_pct]
     @health.w_temp = params[:w_temp]
-    @health.y_steps = params[:y_steps]
-    @health.self_exp = params[:self_exp]
+    @health.y_steps = 0
+    @health.self_exp = 0
     @health.result = params[:result]
     @health.save
   end
