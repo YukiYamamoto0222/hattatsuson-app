@@ -14,4 +14,8 @@ class HealthController < ApplicationController
 
   end
 
+  def data_response
+    @health_data = current_user.healths
+  end
+
 end

@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   get "/health/morning_new" => 'health#morning_new'
 
+  get "/data_response" => 'health#data_response'
+
 end
