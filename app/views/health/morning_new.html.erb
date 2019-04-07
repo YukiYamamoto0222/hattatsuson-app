@@ -1,7 +1,8 @@
 <h1>朝の入力</h1>
-<%= form_for @health, url: "/health/morning_new" do |f| %>
-  <label><%= f.radio_button :self_exp, "0" %>☓</label>
-  <label><%= f.radio_button :self_exp, "50" %>△</label>
-  <label><%= f.radio_button :self_exp, "100" %>◯</label>
-  <%= f.submit "OK!" %>
+<%= form_tag("/health/morning_create", method: :post) do %>
+  <%= hidden_field_tag :date, Date.today %>
+  <input type="radio" name="self_exp" value="0">☓
+  <input type="radio" name="self_exp" value="50">△
+  <input type="radio" name="self_exp" value="100">◯
+  <input type="submit" value="OK！">
 <% end %>

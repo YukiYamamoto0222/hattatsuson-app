@@ -9,8 +9,27 @@ class HealthController < ApplicationController
     @health = Health.new
   end
 
-  def night_new
+  def morning_create
+    @health = current_user.healths.build(self_exp: params[:self_exp], date: params[:date])
+    if @health.save
+      redirect_to "/health/morning_response"
+    else
+      render 'health/morning_new'
+    end
+  end
 
+  def night_new
+  end
+
+  def night_create
+    # Date.todayだと0:00移行に夜入力できない
+    @health = Health.find_by(user_id: current_user.id, date: Date.today)
+    @health.result = params[:result]
+    if @health.save
+      redirect_to "/health/night_response"
+    else
+      render 'health/night_new'
+    end
   end
 
   def data_response
