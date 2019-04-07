@@ -12,8 +12,6 @@ CSV.generate do |csv|
         data.date.day,
         data.rain_pct,
         data.w_temp,
-        data.w_shitsu,
-        data.w_press,
         data.y_steps,
         data.self_exp,
         data.result

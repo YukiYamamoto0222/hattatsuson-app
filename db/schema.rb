@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_07_082206) do
+ActiveRecord::Schema.define(version: 2019_04_07_084828) do
 
   create_table "healths", force: :cascade do |t|
     t.integer "user_id"
     t.integer "rain_pct"
     t.integer "w_temp"
-    t.integer "w_shitsu"
-    t.integer "w_press"
     t.integer "y_steps"
     t.integer "self_exp"
     t.integer "result"
