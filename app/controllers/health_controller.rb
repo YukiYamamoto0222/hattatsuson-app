@@ -37,11 +37,8 @@ class HealthController < ApplicationController
   end
 
   def data_create
-    if Health.find_by(user_id: params[:user_id], date: Date.today) == nil
-      @health = Health.new
-    else
-      @health = Health.last
-    end
+    @health = Health.new
+    @health.date = Date.today
     @health.rain_pct = params[:rain_pct]
     @health.w_temp = params[:w_temp]
     @health.y_steps = params[:y_steps]
