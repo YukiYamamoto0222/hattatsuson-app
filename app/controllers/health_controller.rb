@@ -6,11 +6,11 @@ class HealthController < ApplicationController
   end
 
   def morning_new
-    @health = Health.new
   end
 
   def morning_create
-    @health = current_user.healths.build(self_exp: params[:self_exp], date: params[:date])
+    @health = Health.find_by(user_id: current_user.id, date: Date.today)
+    @health.self_exp = params[:self_exp]
     if @health.save
       redirect_to "/health/morning_response"
     else
@@ -22,7 +22,6 @@ class HealthController < ApplicationController
   end
 
   def night_create
-    # Date.todayだと0:00移行に夜入力できない
     @health = Health.find_by(user_id: current_user.id, date: Date.today)
     @health.result = params[:result]
     if @health.save
@@ -45,7 +44,7 @@ class HealthController < ApplicationController
     @health.w_temp = params[:w_temp]
     @health.y_steps = 0
     @health.self_exp = 0
-    @health.result = params[:result]
+    @health.result = 0
     @health.m_predict = params[:m_predict]
     @health.pref_code = 1
     @health.save
