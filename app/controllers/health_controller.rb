@@ -40,6 +40,9 @@ class HealthController < ApplicationController
     @health = Health.find_by(user_id: params[:user_id], date: Date.today)
     @health.rain_pct = params[:rain_pct]
     @health.w_temp = params[:w_temp]
+    @health.y_steps = params[:y_steps]
+    @health.self_exp = params[:self_exp]
+    @health.result = params[:result]
     @health.save
   end
 
