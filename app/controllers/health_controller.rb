@@ -1,5 +1,6 @@
 class HealthController < ApplicationController
   def index
+
   end
 
   def morning_new
@@ -10,13 +11,12 @@ class HealthController < ApplicationController
 
   end
 
-  def create
-
+  def data_response
+    @health_data = Health.all
   end
 
-  def data_response
-    @user = User.first
-    @health_data = @user.healths
+  def data_create
+
   end
 
 end

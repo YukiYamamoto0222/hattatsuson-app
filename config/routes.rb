@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   get "/data_response" => 'health#data_response'
 
+  post "/data_create" => 'health#data_create'
 end
