@@ -1,0 +1,7 @@
+<h1>朝の入力</h1>
+<%= form_for @health, url: "/health/morning_new" do |f| %>
+  <label><%= f.radio_button :self_exp, "0" %>☓</label>
+  <label><%= f.radio_button :self_exp, "50" %>△</label>
+  <label><%= f.radio_button :self_exp, "100" %>◯</label>
+  <%= f.submit "OK!" %>
+<% end %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  rain_pct: 1
+  w_temp: 1
+  w_shitsu: 1
+  w_press: 1
+  y_steps: 1
+  self_exp: 1
+  result: 1
+
+two:
+  user_id: 1
+  rain_pct: 1
+  w_temp: 1
+  w_shitsu: 1
+  w_press: 1
+  y_steps: 1
+  self_exp: 1
+  result: 1
