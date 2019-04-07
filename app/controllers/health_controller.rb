@@ -45,6 +45,8 @@ class HealthController < ApplicationController
     @health.y_steps = 0
     @health.self_exp = 0
     @health.result = params[:result]
+    @health.m_predict = params[:m_predict]
+    @health.pref_code = 1
     @health.save
   end
 
