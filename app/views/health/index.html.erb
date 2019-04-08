@@ -1,8 +1,9 @@
 <h1>ホーム画面</h1>
 
-<h5>今日のResult</h5>
+<h5>今日の<%= current_user.theme %>予想！</h5>
 
-<%= link_to "ログイン", new_user_session_path %>
-<%= link_to "新規登録", cancel_user_registration_path %>
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<%= link_to "アカウント削除", cancel_user_registration_path %>
+<% if @health != nil %>
+  <h5><%= @health.m_predict %></h5>
+<% else %>
+  <p>まだ診断結果がありません・・・</p>
+<% end %>

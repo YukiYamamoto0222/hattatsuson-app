@@ -21,6 +21,16 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div>
+    <%= f.label "ニックネーム" %><br />
+    <%= f.text_area :name %>
+  </div>
+
+  <div>
+    <%= f.label "あなたの気になることは？" %><br />
+    <%= f.text_area :theme, placeholder: '例）ねむけ、ストレス' %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

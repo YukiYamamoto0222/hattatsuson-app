@@ -9,13 +9,37 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header>
-    <p>--------------------</p>
-    <p>あとでヘッダーを入れます</p>
-    <p>--------------------</p>
+    <ul>
+      <li>
+        <%= link_to "ホーム画面", "/" %>
+      </li>
+      <li>
+        <%= link_to "朝の入力", "/health/morning_new" %>
+      </li>
+      <li>
+        <%= link_to "夜の入力", "/health/night_new" %>
+      </li>
+    </ul>
   </header>
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
+  <footer>
+    <ul>
+      <li>
+        <%= link_to "ログイン", new_user_session_path %>
+      </li>
+      <li>
+        <%= link_to "新規登録", cancel_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </li>
+      <li>
+        <%= link_to "アカウント削除", cancel_user_registration_path %>
+      </li>
+    </ul>
+  </footer>
 </html>
